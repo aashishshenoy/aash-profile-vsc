@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <title>Aashish Shenoy - Engineering Leader</title>
+  <defs>
+    <!-- VS Code inspired gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078D4" />
+      <stop offset="100%" stop-color="#0060B1" />
+    </linearGradient>
+    
+    <!-- Cursor arrow color -->
+    <linearGradient id="cursorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50D9FF" />
+      <stop offset="100%" stop-color="#0095D9" />
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.5" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  
+  <!-- Background shape (hexagon like VS Code) -->
+  <path d="M32,4 L56,16 L56,48 L32,60 L8,48 L8,16 Z" fill="url(#bgGradient)" />
+  
+  <!-- Cube from favicon2 -->
+  <g opacity="0.7">
+    <!-- Top face -->
+    <polygon points="32,12 52,22 32,32 12,22" fill="#4B5563" />
+    
+    <!-- Left face -->
+    <polygon points="12,22 32,32 32,52 12,42" fill="#374151" />
+    
+    <!-- Right face -->
+    <polygon points="32,32 52,22 52,42 32,52" fill="#1F2937" />
+  </g>
+  
+  <!-- Letters container -->
+  <g transform="translate(0, 2)">
+    <!-- Lowercase 'a' shape with angular design -->
+    <path d="M16,30 L16,36 C16,32 18,28 22,28 L28,28 L28,20 L22,20 L22,24 L16,24 L16,30 Z M16,36 L16,44 C16,48 20,48 24,48 L28,48 L28,42 L24,42 C22,42 22,40 22,40 L22,34 L28,34 L28,30 L22,30 C18,30 16,32 16,36 Z" 
+          fill="url(#cursorGradient)" filter="url(#shadow)" />
+    
+    <!-- Improved S shape with better top stroke -->
+    <path d="M34,14 L46,14 C50,14 52,16 52,20 L52,24 C52,28 48,30 46,30 L38,30 C36,30 34,32 34,34 L34,44 C34,46 36,48 38,48 L50,48 L50,42 L38,42 C38,42 38,42 38,42 L38,36 C38,36 38,36 38,36 L46,36 C50,36 52,32 52,28 L52,20 C52,16 50,14 46,14 L34,14 Z" 
+          fill="#FFFFFF" filter="url(#shadow)" />
+  </g>
+</svg>

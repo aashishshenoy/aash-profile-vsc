@@ -1,0 +1,641 @@
+{
+  "links": {
+    "github": "https://github.com/aashishshenoy",
+    "linkedin": "https://linkedin.com/in/aashishshenoy",
+    "email": "aashenoy.work@gmail.com",
+    "phone": "(732) 707-7061"
+  },
+  "main": [
+    {
+      "title": "Ashish Shenoy: My Full-Stack Portfolio",
+      "align": "center",
+      "content": [
+        {
+          "text": "Welcome to my personal site, a living demonstration of the technical breadth and strategic leadership I bring to an organization. While my professional foundation is rooted in robust backend development, this platform is engineered to showcase proficiency across the modern software development lifecycle—from advanced UI architecture to resilient, cloud-based DevOps."
+        },
+        {
+          "highlight": "",
+          "text": "I invite recruiters, hiring managers, and potential collaborators to explore this site as a comprehensive view of my ability to lead and execute complex technical visions, perfectly aligning with the demands of a Director of Engineering role."
+        }
+      ]
+    },
+    {
+      "title": "Content Highlights",
+      "content": [
+        {
+          "text": "Explore the dynamic sections to gain a complete understanding of my expertise:"
+        },
+        {
+          "highlight": "Detailed Resume & Contact",
+          "link": "AboutContent",
+          "text": "My professional background, experience, and contact information."
+        },
+        {
+          "highlight": "Technical Deep Dives",
+          "link": "BlogContent",
+          "text": "Blog content covering advanced System Design, Engineering Management strategies, and best practices."
+        },
+        {
+          "highlight": "Code & Theory",
+          "link": "CodeContent",
+          "text": "Content focused on key Data Structures and Algorithms."
+        },
+        {
+          "highlight": "Project Portfolio",
+          "link": "ProjectsContent",
+          "text": "In-depth details of my past projects and a transparent look at the projects I am currently working on."
+        },
+        {
+          "highlight": "Photo Gallery",
+          "link": "GalleryContent",
+          "text": "A collection of photos that showcase my work and interests."
+        },
+        {
+          "text": "And More! I welcome you to navigate the VS Code-themed interface and evaluate the technical acumen, architectural mindset, and hands-on execution skills demonstrated throughout the site."
+        }
+      ]
+    },
+    {
+      "title": "This Platform",
+      "content": [
+        {
+          "text": "The site is not just a digital resume; it is a functioning technical project designed to showcase my command over critical technologies. To go beyond a standard portfolio, I integrated several sophisticated features using engineering design and prompt-based development with Google Gemini and Claude, illustrating a capacity for deep technical innovation and adoption of AI tools."
+        },
+        {
+          "highlight": "Baseline Design Credit",
+          "link": "https://www.youtube.com/watch?v=w2Gsvu8QdlU",
+          "text": "The initial aesthetic foundation of the VS Code design was inspired by the linked tutorial available on youtube, with all advanced features and current architecture developed independently."
+        },
+        {
+          "highlight": "UI/Frontend Prowess",
+          "text": "Developed using React and Vite, the site features a highly customized, intuitive interface."
+        },
+        {
+          "highlight": "DevOps & Cloud Architecture",
+          "text": "The entire platform is deployed on AWS and fully managed using Terraform (Infrastructure as Code), demonstrating expertise in scalable, maintainable, and cost-effective cloud infrastructure."
+        },
+        {
+          "highlight": "Strategic Design",
+          "text": "The underlying visual framework is modeled after Visual Studio Code (VS Code). This deliberate choice reflects my deep engagement with developer tools and serves as a proof-of-concept for a future SaaS product requiring an IDE-like user experience."
+        },
+        {
+          "highlight": "Multi-Tab Content Pane",
+          "text": "A custom interface allowing for efficient, parallel navigation of various content sections."
+        },
+        {
+          "highlight": "Embedded Code Executor",
+          "text": "Integration of Monaco Editor and Pyodide to provide a functional, client-side code editing and execution environment for Data Structures and Algorithms content."
+        },
+        {
+          "highlight": "Dynamic Content Rendering",
+          "text": "Implementation of a robust engine that connects the Explorer menu actions to dynamic content rendering within the tabbed interface."
+        },
+        {
+          "highlight": "Responsive UI",
+          "text": "A fully mobile-responsive design."
+        },
+        {
+          "highlight": "Professional Chronology View",
+          "link": "ChronologyContent",
+          "text": "Includes a detailed chronology view for experience."
+        }
+      ]
+    }
+  ],
+  "about": {
+    "name": "Aashish Shenoy",
+    "title": "Engineering Leader",
+    "summary": "Strategic Engineering Leader, adept at scaling global Finance and SaaS organizations. Expert in cloud data architecture, governance, and risk. Leverages empathetic, customer-focused leadership and technical craft to drive operational excellence and measurable business impact.",
+    "experience": [
+      {
+        "role": "Engineering Manager",
+        "company": "Salesforce • Feb 2025 - Present • New York, New York",
+        "details": [
+          "Strategic Transition & Resilience: Successfully led the acquired product engineering team through corporate harmonization, maintaining high team morale and engagement through a high-ambiguity transition period.",
+          "Operational Excellence & Security: Spearheaded the design and launch of a centralized Admin Console, eliminating direct Hands-In-Production access for customer configurations, reducing operational risk and overhead across the entire acquired product suite.",
+          "Infrastructure Modernization: Drove critical infrastructure migrations, transitioning complex single-machine workloads to Kubernetes clusters to eliminate Single Points of Failure (SPOF) and ensure system reliability and scale under new corporate standards.",
+          "Hands-On Innovation: Led technical innovation efforts, including the hands-on prototyping of a dynamic data extraction load management strategy designed to improve ServiceNow backup throughput by 3x, demonstrating sustained engineering agility.",
+          "Corporate Integration & Future Readiness: Championed the rapid adoption of Salesforce's development methodologies and the Service Ownership model. Steered Al and Agentic upskill (Cursor, Gemini, Agents, MCP) to future-proof the team and align with target platforms."
+        ]
+      },
+      {
+        "role": "Engineering Manager",
+        "company": "Own Data Company (Acquired by Salesforce) • Apr 2024 - Jan 2025 • Englewood Cliffs, New Jersey",
+        "details": [
+          "Product Leadership & P&L Impact: Directed the engineering function for the Recover for ServiceNow product. Oversaw a 100%+ increase in ARR (from $1.9M to $4M) and grew the customer base by over 50%+ (45 to 70 clients), adding Enterprise customers to the SMB blend.",
+          "Innovation & Cost Efficiency: Championed and delivered two key product innovations: a patented data fragmentation technique that improved backup performance by 300% and the introduction of synthetic backups, which reduced the cost to serve by 75%.",
+          "Technical & Strategic Oversight: Served as the technical leader for the 10-engineer team (NJ, Hyderabad). Provided architectural oversight, technical guidance, and engaged with executive leadership (VP, CTO) to set long-term product strategy and roadmaps.",
+          "Team & Delivery Management: Managed distributed R&D teams, automating the delivery pipeline to ensure rapid, consistent deployment of enhancements. Accelerated engineering velocity by proactively addressing technical debt and organizational blockers."
+        ]
+      },
+      {
+        "role": "VP, Engineering Manager",
+        "company": "Goldman Sachs • Feb 2013 - Apr 2024 • New York, New York",
+        "details": [
+          "Executive Leadership & Scale: Led a global engineering organization of 30+ technologists and managers across New York, Dallas, and Bangalore. Oversaw compute and personnel budgets and drove organizational structure and performance strategy.",
+          "Organizational Growth & Technical Strategy: Organically scaled a 4-person pod (2019) into a large, multi-disciplinary engineering function, directing strategy across the stack, and assuming responsibility for Data Modeling, Cloud Infrastructure, and Observability.",
+          "Governance & Risk Management: Provided executive technical governance and architectural direction from ideation through continuous delivery. Established rigorous SDLC and SRE protocols, maintaining ownership of Technology Risk, Regulatory Compliance, and Business Continuity and Disaster Recovery planning.",
+          "Critical Platform Ownership: Held functional ownership for enterprise data platforms, leading the technical design and delivery of Loan & Collateral Data Management systems and high-volume ETL pipelines that process sensitive financial data.",
+          "Business Alignment & Stakeholder Management: Managed diverse stakeholders - Trading Desks, Asset Managers, Operations, Controllers - defining roadmaps, managing budgets, and aligning engineering priorities with commercial and regulatory needs.",
+          "Data Integrity & Risk Mitigation: Drove operational resilience and compliance by delivering high-impact solutions, including data exception and review platforms. These systems prevented potential regulatory fines and mitigated operational risk while ensuring the accuracy and integrity of data for critical regulatory reporting, such as FRY-14, under strict fed timelines.",
+          "Technology & Vendor Integration: Led technical evaluation and successful onboarding of major NoSQL and NewSQL databases (MongoDB, SingleStore). Managed relationships across internal Data Infrastructure teams and external contingent worker vendors."
+        ]
+      },
+      {
+        "role": "Systems Engineer",
+        "company": "Infosys Technologies Limited • Sep 2008 - Aug 2010 • Bangalore, India",
+        "details": [
+          "Developed Data Warehouse reporting and analysis systems for Telecommunication and Insurance clients."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "level": "M.S., Telecommunications Engineering and Management",
+        "school": "University of Maryland • Dec 2012 • College Park, MD"
+      },
+      {
+        "level": "B.E., Telecommunications Engineering",
+        "school": "Visvesvaraya Technological University • Jul 2008 • Bangalore, India"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "category": "Languages/Frameworks",
+      "color": "blue",
+      "skills": [
+        {"name": "Java", "level": 80},
+        {"name": "Python", "level": 80},
+        {"name": "JavaScript", "level": 50},
+        {"name": "SQL", "level": 90},
+        {"name": "Shell", "level": 70},
+        {"name": "React", "level": 60},
+        {"name": "Node.js", "level": 40},
+        {"name": "Dropwizard", "level": 90},
+        {"name": "Flask", "level": 80}
+      ]
+    },
+    {
+      "category": "Cloud & Data Platforms",
+      "color": "indigo",
+      "skills": [
+        {"name": "AWS (EC2, EKS, S3)", "level": 80},
+        {"name": "Kubernetes", "level": 60},
+        {"name": "Docker", "level": 80},
+        {"name": "Microservices", "level": 90},
+        {"name": "Terraform", "level": 60},
+        {"name": "Databricks", "level": 30},
+        {"name": "ArgoCD", "level": 60}
+      ]
+    },
+    {
+      "category": "Data Processing & Storage",
+      "color": "purple",
+      "skills": [
+        {"name": "Spark", "level": 50},
+        {"name": "Kafka", "level": 80},
+        {"name": "Ignite", "level": 90},
+        {"name": "PostgreSQL", "level": 80},
+        {"name": "MongoDB/Atlas", "level": 90},
+        {"name": "Singlestore", "level": 80},
+        {"name": "Sybase IQ", "level": 90},
+        {"name": "Redis", "level": 70}
+      ]
+    },
+    {
+      "category": "SDLC & Observability",
+      "color": "pink",
+      "skills": [
+        {"name": "Agile (Scrum)", "level": 90},
+        {"name": "Jira", "level": 70},
+        {"name": "Git", "level": 80},
+        {"name": "CI/CD (Jenkins, Gitlab/Github Actions)", "level": 70},
+        {"name": "Prometheus", "level": 70},
+        {"name": "Grafana", "level": 60},
+        {"name": "Datadog", "level": 50},
+        {"name": "Sentry", "level": 80},
+        {"name": "Snyk", "level": 70}
+      ]
+    },
+    {
+      "category": "Enterprise & Methodology",
+      "color": "red",
+      "skills": [
+        {"name": "ServiceNow", "level": 60},
+        {"name": "Salesforce", "level": 80},
+        {"name": "PR/FAQ", "level": 90},
+        {"name": "V2MOM", "level": 90},
+        {"name": "Confluence", "level": 80},
+        {"name": "Architectural Design Review", "level": 90}
+      ]
+    },  
+    {
+      "category": "Regulatory & Risk Acumen",
+      "color": "orange",
+      "skills": [
+        {"name": "FRY-14", "level": 60},
+        {"name": "DF-943", "level": 50},
+        {"name": "GDPR", "level": 60},
+        {"name": "SOX", "level": 60},
+        {"name": "SOC 2", "level": 50},        
+        {"name": "Data Governance", "level": 80},
+        {"name": "Cloud Security", "level": 60},
+        {"name": "Tech Risk Management", "level": 70}
+      ]
+    },
+    {
+      "category": "Financial Products",
+      "color": "yellow",
+      "skills": [
+        {"name": "Retail & Wholesale Lending", "level": 90},
+        {"name": "Asset Backed Securities", "level": 70},
+        {"name": "Secondary Markets", "level": 80},
+        {"name": "Asset Management", "level": 90}
+      ]
+    }
+  ],
+  "chronology": [
+    {
+        "year": "2024",
+        "company": "Salesforce/Own Data Company",
+        "event": "Leading the Engineering for Recover For ServiceNow Product",
+        "color": "text-blue-400 border-blue-400"
+    },
+    {
+        "year": "2022",
+        "company": "Goldman Sachs",
+        "event": "Leading 30+ Person Org performing full stack development on Loans and Collateral Data Masters, Servicing and Asset Management, Regulatory Reporting, and Data Modelling and Cloud Implementations.",
+        "color": "text-blue-400 border-blue-400"
+    },
+    {
+        "year": "2020",
+        "company": "Goldman Sachs",
+        "event": "Expanded team to 10 leading the Loan Database and ETL functionalities",
+        "color": "text-indigo-400 border-indigo-400"
+    },
+    {
+        "year": "2019",
+        "company": "Goldman Sachs",
+        "event": "Managing a 4 Person Pod building a greenfield Loans Data Management tool using React, Java, MongoDb, Kafka.",
+        "color": "text-indigo-400 border-indigo-400"
+    },
+    {
+        "year": "2017",
+        "company": "Goldman Sachs",
+        "event": "Build Loans Origination Pipeline feeding Consumer Loans in from Marlette, Upstart, Rocket, amongst others.",
+        "color": "text-purple-400 border-purple-400"
+    },
+    {
+        "year": "2015",
+        "company": "Goldman Sachs",
+        "event": "Rebuild Loans Performance Engine improving capacity by 200x and speed by 15x.",
+        "color": "text-pink-400 border-pink-400"
+    },
+    {
+        "year": "2013",
+        "company": "Goldman Sachs",
+        "event": "Learning Financial Systems and Databases",
+        "color": "text-pink-400 border-pink-400"
+    },
+    {
+        "year": "2012",
+        "company": "University of Maryland, College Park",
+        "event": "M.S. Telecommunications Engineering and Management",
+        "color": "text-red-400 border-red-400"
+    },
+    {
+        "year": "2010",
+        "company": "Infosys Technologies Limited",
+        "event": "Learning Enterprise Software Development and Management, and Insurance data domain.",
+        "color": "text-red-400 border-red-400"
+    },
+    {
+        "year": "2008",
+        "company": "Visvesvaraya Technological University, Bangalore",
+        "event": "B.E. Telecommunications Engineering",
+        "color": "text-red-400 border-red-400"
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce platform with real-time inventory management and secure payment processing",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Socket.io"],
+      "githubUrl": "https://github.com/yourusername/ecommerce",
+      "liveUrl": "https://ecommerce-demo.com",
+      "image": "https://images.unsplash.com/photo-1557821552-17105176677c"
+    },
+    {
+      "title": "Task Management System",
+      "description": "A collaborative task management system with real-time updates and team collaboration features",
+      "technologies": ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+      "githubUrl": "https://github.com/yourusername/task-manager",
+      "liveUrl": "https://task-manager-demo.com",
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0"
+    },
+    {
+      "title": "AI Image Generator",
+      "description": "An AI-powered image generation tool using machine learning models and real-time processing",
+      "technologies": ["Python", "TensorFlow", "React", "FastAPI"],
+      "githubUrl": "https://github.com/yourusername/ai-image-gen",
+      "liveUrl": "https://ai-image-gen-demo.com",
+      "image": "https://images.unsplash.com/photo-1547954575-855750c57bd3"
+    }
+  ],
+  "sidebar": [
+    {"id": "main", "label": "Main", "path": "/", "component": "MainContent", "icon": "User"},
+    {"id": "projects", "label": "Projects", "path": "/projects", "component": "ProjectsContent", "icon": "Folder"},
+    {"id": "blogs", "label": "Blogs", "path": "/blogs", "component": "BlogContent", "icon": "BookOpen"},
+    {"id": "gallery", "label": "Gallery", "path": "/gallery", "component": "GalleryContent", "icon": "Image"},
+    {"id": "code", "label": "Code", "path": "/code", "component": "CodeContent", "icon": "Code"}
+  ],
+  "explorer": [
+    {
+      "name": "Main",
+      "type": "folder",
+      "isOpen": true,
+      "content": "MainContent",
+      "children": [
+        {"name": "about.tsx", "type": "file", "language": "typescript", "content": "AboutContent"},
+        {"name": "chronology.tsx", "type": "file", "language": "typescript", "content": "ChronologyContent"},
+        {"name": "skills.tsx", "type": "file", "language": "typescript", "content": "SkillsContent"},
+        {"name": "contact.tsx", "type": "file", "language": "typescript", "content": "ContactContent"}
+      ]
+    },
+    {
+      "name": "Projects",
+      "type": "folder",
+      "isOpen": true,
+      "content": "ProjectsContent",
+      "children": [
+        {
+          "name": "Executed",
+          "type": "folder",
+          "isOpen": true,
+          "children": [
+            {"name": "data-management-at-scale.md", "type": "file", "language": "markdown", "content": "DataManagementAtScaleContent"},
+            {"name": "ignite-grid.md", "type": "file", "language": "markdown", "content": "IgniteGridContent"},
+            {"name": "servicenow-extract.md", "type": "file", "language": "markdown", "content": "ServicenowExtractContent"},
+            {"name": "terraform.md", "type": "file", "language": "markdown", "content": "TerraformContent"},
+            {"name": "vscode-profile-site.md", "type": "file", "language": "markdown", "content": "VscodeProfileSiteContent"},
+            {"name": "mcp.md", "type": "file", "language": "markdown", "content": "McpContent"}
+          ]
+        },
+        {
+          "name": "Pipeline",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "fulcrum.md", "type": "file", "language": "markdown", "content": "FulcrumContent"},
+            {"name": "snitch.md", "type": "file", "language": "markdown", "content": "SnitchContent"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blogs",
+      "type": "folder",
+      "isOpen": true,
+      "children": [
+        {
+          "name": "System Design",
+          "type": "folder",
+          "isOpen": true,
+          "children": [
+            {"name": "microservices-architecture.md", "type": "file", "language": "markdown", "content": "MicroservicesArchitectureContent"},
+            {"name": "api-design-principles.md", "type": "file", "language": "markdown", "content": "ApiDesignPrinciplesContent"},
+            {"name": "database-scaling-strategies.md", "type": "file", "language": "markdown", "content": "DatabaseScalingStrategiesContent"},
+            {"name": "distributed-systems-fundamentals.md", "type": "file", "language": "markdown", "content": "DistributedSystemsFundamentalsContent"}
+          ]
+        },
+        {
+          "name": "Best Practices",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "clean-code-principles.md", "type": "file", "language": "markdown", "content": "CleanCodePrinciplesContent"},
+            {"name": "code-review-best-practices.md", "type": "file", "language": "markdown", "content": "CodeReviewBestPracticesContent"},
+            {"name": "testing-strategies.md", "type": "file", "language": "markdown", "content": "TestingStrategiesContent"}
+          ]
+        },
+        {
+          "name": "Datastructures & Algorithms",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "dynamic-programming-fundamentals.md", "type": "file", "language": "markdown", "content": "DynamicProgrammingFundamentalsContent"}
+          ]
+        },
+        {
+          "name": "Engineering Leadership",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "building-high-performing-teams.md", "type": "file", "language": "markdown", "content": "BuildingHighPerformingTeamsContent"}, 
+            {"name": "technical-debt-management.md", "type": "file", "language": "markdown", "content": "TechnicalDebtManagementContent"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "type": "folder",
+      "isOpen": true,
+      "children": [
+        {
+          "name": "Arrays",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Two Sum.md", "type": "file"},
+            {"name": "Stock.md", "type": "file"},
+            {"name": "Contains Duplicate.md", "type": "file"},
+            {"name": "Array Product.md", "type": "file"},
+            {"name": "Three Sum.md", "type": "file"},
+            {"name": "Subarray K Sum.md", "type": "file"},
+            {"name": "Next Permutation.md", "type": "file"},
+            {"name": "Rotate Image.md", "type": "file"},
+            {"name": "First Missing Positive.md", "type": "file"},
+            {"name": "Median of Two Sorted.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Linked List",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Reverse Linked List.md", "type": "file"},
+            {"name": "Merge Two Sorted Lists.md", "type": "file"},
+            {"name": "Add Two Numbers.md", "type": "file"},
+            {"name": "Remove Nth Node.md", "type": "file"},
+            {"name": "Linked List Cycle II.md", "type": "file"},
+            {"name": "Merge K Sorted Lists.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Stack",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Valid Parentheses.md", "type": "file"},
+            {"name": "Stack Using Queues.md", "type": "file"},
+            {"name": "Min Stack.md", "type": "file"},
+            {"name": "Reverse Polish Notation.md", "type": "file"},
+            {"name": "Daily Temperatures.md", "type": "file"},
+            {"name": "Largest Rectangle.md", "type": "file"},
+            {"name": "Sliding Window Maximum.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Queue",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Queue Using Stacks.md", "type": "file"},
+            {"name": "Data Stream Moving Average.md", "type": "file"},
+            {"name": "Design Circular Queue.md", "type": "file"},
+            {"name": "Task Scheduler.md", "type": "file"},
+            {"name": "The Circular Game.md", "type": "file"},
+            {"name": "Sliding Window Maximum.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Tree",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Maximum Depth.md", "type": "file"},
+            {"name": "Invert.md", "type": "file"},
+            {"name": "Level Order Traversal.md", "type": "file"},
+            {"name": "Preorder and Inorder.md", "type": "file"},
+            {"name": "Validate BST.md", "type": "file"},
+            {"name": "Serialize and Deserialize.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Graph",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "The Town Judge.md", "type": "file"},
+            {"name": "Center Of Star Graph.md", "type": "file"},
+            {"name": "Course Schedule.md", "type": "file"},
+            {"name": "Number Of Islands.md", "type": "file"},
+            {"name": "Clone Graph.md", "type": "file"},
+            {"name": "Word Ladder.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Sorting",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Merge Sorted Array.md", "type": "file"},
+            {"name": "Sort Colors.md", "type": "file"},
+            {"name": "Sort List.md", "type": "file"},
+            {"name": "Find Peak Element.md", "type": "file"},
+            {"name": "Kth Largest.md", "type": "file"},
+            {"name": "Count Smaller After.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Searching",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Binary Search.md", "type": "file"},
+            {"name": "First Bad Version.md", "type": "file"},
+            {"name": "Rotated Sorted Search.md", "type": "file"},
+            {"name": "First And Last.md", "type": "file"},
+            {"name": "Search Matrix.md", "type": "file"},
+            {"name": "Split Largest Sum.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Dynamic Programming",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Climbing Stairs.md", "type": "file"  },
+            {"name": "Maximum Subarray.md", "type": "file"},
+            {"name": "Coin Change.md", "type": "file"},
+            {"name": "Coin Change 2.md", "type": "file"},
+            {"name": "Longest Increasing Subsequence.md", "type": "file"},
+            {"name": "UniquePaths.md", "type": "file"},
+            {"name": "House Robber.md", "type": "file"},
+            {"name": "LongestPalindromicSubstring.md", "type": "file"},
+            {"name": "Regular Expression Matching.md", "type": "file"},
+            {"name": "Edit Distance.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Backtracking",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Letter Case Permutation.md", "type": "file"},
+            {"name": "Generate Parentheses.md", "type": "file"},
+            {"name": "Permutations.md", "type": "file"},
+            {"name": "Subsets.md", "type": "file"},
+            {"name": "Word Search.md", "type": "file"},
+            {"name": "N Queens.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Divide and Conquer",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Maximum Subarray.md", "type": "file"},
+            {"name": "Majority Element.md", "type": "file"},
+            {"name": "Different Ways To Add Parentheses.md", "type": "file"},
+            {"name": "Kth Largest Element In An Array.md", "type": "file"},
+            {"name": "Search A 2D Matrix II.md", "type": "file"},
+            {"name": "Count Of Smaller Numbers After Self.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Greedy",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Best Time To Buy And Sell Stock.md", "type": "file"},
+            {"name": "Assign Cookies.md", "type": "file"},
+            {"name": "Jump Game.md", "type": "file"},
+            {"name": "Gas Station.md", "type": "file"},
+            {"name": "Task Scheduler.md", "type": "file"},
+            {"name": "Candy.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Two Pointers",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Valid Palindrome.md", "type": "file"},
+            {"name": "Remove Duplicates From Sorted Array.md", "type": "file"},
+            {"name": "Container With Most Water.md", "type": "file"},
+            {"name": "3Sum.md", "type": "file"},
+            {"name": "Sort Colors.md", "type": "file"},
+            {"name": "Trapping RainWater.md", "type": "file"}
+          ]
+        },
+        {
+          "name": "Sliding Window",
+          "type": "folder",
+          "isOpen": false,
+          "children": [
+            {"name": "Maximum Average Subarray I.md", "type": "file"},
+            {"name": "Sort Colors.md", "type": "file"},
+            {"name": "Longest Continuous Increasing Subsequence.md", "type": "file"},
+            {"name": "Longest Substring Without Repeating Characters.md", "type": "file"},
+            {"name": "Permutation In String.md", "type": "file"},
+            {"name": "Minimum Size Subarray Sum.md", "type": "file"},
+            {"name": "Sliding Window Maximum.md", "type": "file"}
+          ]
+        }
+      ]
+    }
+  ]
+}

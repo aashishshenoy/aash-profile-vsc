@@ -1,0 +1,87 @@
+name: Deploy React Application to EC2
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to main
+  workflow_dispatch: # Allow manual runs
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: ${{ secrets.ECR_REPO_URL }}
+  EC2_HOST: ${{ secrets.EC2_DEPLOY_HOST }}
+  EC2_USER: ubuntu
+  IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+  build-and-deploy:
+    name: Build, Push, and Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # --- ECR Authentication ---
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          # Assumes you are using Access Keys, like in the infra repo fix
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      # --- Docker Build and Push ---
+      - name: Build, Tag, and Push Docker Image to ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        run: |
+          # 1. Build
+          docker build -t ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} .
+          # 2. Tag (also tag with 'latest' for easy reference)
+          docker tag ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
+          # 3. Push
+          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
+
+      # --- Deployment via SSH ---
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ env.EC2_HOST }}
+          username: ${{ env.EC2_USER }}
+          # Uses the SSH private key secret you stored earlier
+          key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          script: |
+            echo "Deployment started on EC2 instance."
+            
+            # Define ECR login command using current AWS region and ECR registry
+            ECR_LOGIN_COMMAND=$(aws ecr get-login-password --region ${{ env.AWS_REGION }})
+            
+            # Login to ECR on the EC2 instance
+            # We use sudo as the 'ubuntu' user might not be in the docker group yet (from user_data)
+            echo "$ECR_LOGIN_COMMAND" | sudo docker login --username AWS --password-stdin ${{ steps.login-ecr.outputs.registry }}
+            
+            # Pull the latest image
+            sudo docker pull ${{ env.ECR_REPOSITORY }}:latest
+            
+            # Stop the existing container if it's running
+            if sudo docker ps -q --filter "name=aashish_profile"; then
+              echo "Stopping existing container..."
+              sudo docker stop aashish_profile
+              sudo docker rm aashish_profile
+            fi
+            
+            # Run the new container, exposing port 3000 (which Nginx proxies)
+            echo "Starting new container..."
+            sudo docker run -d \
+              --name aashish_profile \
+              -p 3000:80 \
+              ${{ env.ECR_REPOSITORY }}:latest
+            
+            echo "Deployment finished."

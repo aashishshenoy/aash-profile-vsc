@@ -1,0 +1,49 @@
+# robots.txt for aashishshenoy.com
+
+# Allow search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Explicitly disallow LLM crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GoogleOther
+Disallow: /
+
+User-agent: Anthropic-AI
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Claude-API
+Disallow: /
+
+User-agent: Cohere-AI
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# General disallow for all other bots
+User-agent: *
+Disallow: /
