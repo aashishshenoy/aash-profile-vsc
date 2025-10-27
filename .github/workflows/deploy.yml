@@ -39,15 +39,18 @@ jobs:
       # --- Docker Build and Push ---
       - name: Build, Tag, and Push Docker Image to ECR
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} 
         run: |
-          # 1. Build
-          docker build -t ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} .
-          # 2. Tag (also tag with 'latest' for easy reference)
-          docker tag ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
+          # The image name uses the registry and the repository name from secrets
+          FULL_IMAGE_NAME=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}
+          
+          # 1. Build and Tag
+          docker build -t ${FULL_IMAGE_NAME}:${{ env.IMAGE_TAG }} .
+          # 2. Tag with 'latest'
+          docker tag ${FULL_IMAGE_NAME}:${{ env.IMAGE_TAG }} ${FULL_IMAGE_NAME}:latest
           # 3. Push
-          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
-          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
+          docker push ${FULL_IMAGE_NAME}:${{ env.IMAGE_TAG }}
+          docker push ${FULL_IMAGE_NAME}:latest
 
       # --- Deployment via SSH ---
       - name: Deploy to EC2 via SSH
@@ -68,7 +71,8 @@ jobs:
             echo "$ECR_LOGIN_COMMAND" | sudo docker login --username AWS --password-stdin ${{ steps.login-ecr.outputs.registry }}
             
             # Pull the latest image
-            sudo docker pull ${{ env.ECR_REPOSITORY }}:latest
+            FULL_IMAGE_PULL_NAME="${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest"
+            sudo docker pull $FULL_IMAGE_PULL_NAME
             
             # Stop the existing container if it's running
             if sudo docker ps -q --filter "name=aashish_profile"; then
@@ -82,6 +86,6 @@ jobs:
             sudo docker run -d \
               --name aashish_profile \
               -p 3000:80 \
-              ${{ env.ECR_REPOSITORY }}:latest
+              $FULL_IMAGE_PULL_NAME
             
             echo "Deployment finished."
