@@ -111,8 +111,10 @@ The production deployment uses:
 
 - AWS for hosting
 - Terraform for infrastructure as code
-- GitHub Actions for CI/CD
+- GitHub Actions for CI/CD (see `.github/workflows/deploy.yml`)
 - Docker for containerization
+
+The CI/CD pipeline automatically builds and deploys the application to AWS when changes are pushed to the main branch.
 
 ## License
 
