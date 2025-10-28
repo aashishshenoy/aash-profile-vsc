@@ -65,12 +65,20 @@ jobs:
           script: |
             echo "Deployment started on EC2 instance."
             
-            FULL_IMAGE_PULL_NAME="${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest"
+            # 1. Define variables for clarity and safety
+            ECR_REGISTRY_URI="${{ steps.login-ecr.outputs.registry }}"
+            FULL_IMAGE_PULL_NAME="${ECR_REGISTRY_URI}/${{ env.ECR_REPOSITORY }}:latest"
+            AWS_REGION="${{ env.AWS_REGION }}"
+
+            # 2. Get the ECR login password using the EC2's IAM Role
+            # The output of this command is the short-lived password.
+            ECR_PASSWORD=$(/usr/bin/aws ecr get-login-password --region $AWS_REGION)
+
+            # 3. Perform the Docker Login securely, piping the password
+            # CRITICAL FIX: The registry URI is passed as the single final argument.
+            echo "$ECR_PASSWORD" | sudo docker login --username AWS --password-stdin $ECR_REGISTRY_URI
             
-            # CRITICAL: This command works because the EC2's IAM Instance Profile 
-            # grants permission to 'ecr:GetAuthorizationToken'.
-            echo "Logging into ECR on the EC2 host using Instance Profile..."
-            sudo docker login --username AWS --password-stdin $(/usr/bin/aws ecr get-login-password --region ${{ env.AWS_REGION }}) ${{ steps.login-ecr.outputs.registry }}
+            # --- Continue with Pull and Run ---
             
             echo "Pulling latest image: $FULL_IMAGE_PULL_NAME"
             sudo docker pull $FULL_IMAGE_PULL_NAME
