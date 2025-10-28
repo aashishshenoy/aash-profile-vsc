@@ -1,10 +1,14 @@
-name: Deploy React Application to EC2
+name: Deploy React Application to EC2 (Keys for Runner)
 
 on:
   push:
     branches:
-      - main # Trigger on push to main
-  workflow_dispatch: # Allow manual runs
+      - main
+  workflow_dispatch:
+
+# The runner needs to read code and write (push) to the registry
+permissions:
+  contents: read
 
 env:
   AWS_REGION: us-east-1
@@ -17,17 +21,16 @@ jobs:
   build-and-deploy:
     name: Build, Push, and Deploy
     runs-on: ubuntu-latest
-    # Using default environment
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # --- ECR Authentication ---
+      # --- ECR Authentication (Uses static Access Keys) ---
+      # This loads the credentials (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY) from secrets
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          # Assumes you are using Access Keys, like in the infra repo fix
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
@@ -35,53 +38,51 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
-
+        
       # --- Docker Build and Push ---
       - name: Build, Tag, and Push Docker Image to ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} 
         run: |
-          # The image name uses the registry and the repository name from secrets
           FULL_IMAGE_NAME=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}
           
-          # 1. Build and Tag
+          echo "Building and tagging image: ${FULL_IMAGE_NAME}:${{ env.IMAGE_TAG }}"
           docker build -t ${FULL_IMAGE_NAME}:${{ env.IMAGE_TAG }} .
-          # 2. Tag with 'latest'
           docker tag ${FULL_IMAGE_NAME}:${{ env.IMAGE_TAG }} ${FULL_IMAGE_NAME}:latest
-          # 3. Push
+          
+          echo "Pushing image to ECR..."
           docker push ${FULL_IMAGE_NAME}:${{ env.IMAGE_TAG }}
           docker push ${FULL_IMAGE_NAME}:latest
 
-      # --- Deployment via SSH ---
+      # --- Deployment via SSH (Relies on EC2 Instance Profile for ECR Pull) ---
       - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ env.EC2_HOST }}
           username: ${{ env.EC2_USER }}
-          # Uses the SSH private key secret you stored earlier
+          # Uses the SSH private key secret
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
           script: |
             echo "Deployment started on EC2 instance."
             
-            # Define ECR login command using current AWS region and ECR registry
-            ECR_LOGIN_COMMAND=$(aws ecr get-login-password --region ${{ env.AWS_REGION }})
-            
-            # Login to ECR on the EC2 instance
-            # We use sudo as the 'ubuntu' user might not be in the docker group yet (from user_data)
-            echo "$ECR_LOGIN_COMMAND" | sudo docker login --username AWS --password-stdin ${{ steps.login-ecr.outputs.registry }}
-            
-            # Pull the latest image
             FULL_IMAGE_PULL_NAME="${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest"
+            
+            # CRITICAL: This command works because the EC2's IAM Instance Profile 
+            # grants permission to 'ecr:GetAuthorizationToken'.
+            echo "Logging into ECR on the EC2 host using Instance Profile..."
+            sudo docker login --username AWS --password-stdin $(/usr/bin/aws ecr get-login-password --region ${{ env.AWS_REGION }}) ${{ steps.login-ecr.outputs.registry }}
+            
+            echo "Pulling latest image: $FULL_IMAGE_PULL_NAME"
             sudo docker pull $FULL_IMAGE_PULL_NAME
             
-            # Stop the existing container if it's running
+            # Stop and remove the existing container if it's running
             if sudo docker ps -q --filter "name=aashish_profile"; then
               echo "Stopping existing container..."
               sudo docker stop aashish_profile
               sudo docker rm aashish_profile
             fi
             
-            # Run the new container, exposing port 3000 (which Nginx proxies)
+            # Run the new container, exposing port 3000 (proxied by Nginx)
             echo "Starting new container..."
             sudo docker run -d \
               --name aashish_profile \
