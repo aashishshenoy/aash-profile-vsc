@@ -26,9 +26,9 @@
           "text": "Explore the dynamic sections to gain a complete understanding of my expertise:"
         },
         {
-          "highlight": "Detailed Resume & Contact",
+          "highlight": "Detailed Resume",
           "link": "AboutContent",
-          "text": "My professional background, experience, and contact information."
+          "text": "My professional background and experience."
         },
         {
           "highlight": "Technical Deep Dives",
@@ -43,12 +43,12 @@
         {
           "highlight": "Project Portfolio",
           "link": "ProjectsContent",
-          "text": "In-depth details of my past projects and a transparent look at the projects I am currently working on."
+          "text": "In-depth details of my past and future projects."
         },
         {
           "highlight": "Photo Gallery",
           "link": "GalleryContent",
-          "text": "A collection of photos that showcase my work and interests."
+          "text": "A collection of photos that showcase my life."
         },
         {
           "text": "And More! I welcome you to navigate the VS Code-themed interface and evaluate the technical acumen, architectural mindset, and hands-on execution skills demonstrated throughout the site."

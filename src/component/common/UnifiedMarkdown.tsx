@@ -135,20 +135,20 @@ const UnifiedMarkdown: React.FC<UnifiedMarkdownProps> = (props) => {
       // Determine file path based on source type
       switch (sourceType) {
         case 'blog':
-          filePath = `/src/data/markdown/blogs/${category}/${fileName}`;
+          filePath = `/data/markdown/blogs/${category}/${fileName}`;
           break;
         case 'dsa':
-          filePath = `/src/data/markdown/dsa/${category}/${fileName}`;
+          filePath = `/data/markdown/dsa/${category}/${fileName}`;
           break;
         case 'project':
-          filePath = `/src/data/markdown/projects/${category}/${fileName}`;
+          filePath = `/data/markdown/projects/${category}/${fileName}`;
           break;
         case 'gallery':
-          filePath = `/src/data/markdown/gallery/${category}/${fileName}`;
+          filePath = `/data/markdown/gallery/${category}/${fileName}`;
           break;
         case 'general':
         default:
-          filePath = `/src/data/markdown/${fileName}`;
+          filePath = `/data/markdown/${fileName}`;
           break;
       }
       
@@ -158,7 +158,7 @@ const UnifiedMarkdown: React.FC<UnifiedMarkdownProps> = (props) => {
       if (!response.ok) {
         throw new Error(`Failed to fetch markdown file: ${response.status}`);
       }
-      if (response.headers.get('Content-Type') !== 'text/markdown') {
+      if (!['application/octet-stream', 'text/markdown'].includes(response.headers.get('Content-Type') || '')) {
         setLoading(false);
         setMarkdown('');
         return;
